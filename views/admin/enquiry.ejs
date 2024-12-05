@@ -27,7 +27,8 @@
             <th>Mobile</th>
             <th>Email</th>
             <th>Date</th>
-            <th>Time</th>
+            <th>Status</th>
+
         </tr>
         <% for(var i=0;i<enquirys.length;i++) {  
                 
@@ -49,7 +50,7 @@
                     <%- enquirys[i].currentdate%><br>
                 
                 </th>
-                <th><%- enquirys[i].currenttime%></th>
+                <th><%- enquirys[i].enquiry_status%></th>
             </tr>
         <% } %>
             </table>
