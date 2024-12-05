@@ -215,7 +215,7 @@ router.post("/save_footer_detail",function(req,res){
 });
 
 router.get("/enquiry",async function(req,res){
-    var sql=`SELECT * FROM enquiry Where enquiry_status='' `;
+    var sql=`SELECT * FROM enquiry Where enquiry_status='complete' `;
     var data= await exe(sql);
     var obj={"enquirys":data,"is_login":checklogin(req)};
     res.render("admin/enquiry.ejs",obj,);
