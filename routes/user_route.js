@@ -77,9 +77,9 @@ router.get("/services",async function(req,res){
 });
 router.post("/send_service_inquiry",async function(req,res){
     var d=req.body;
-    var sql=`INSERT INTO service_enquiry ( name ,email ,  phone , information , service_title, currentdate,currenttime ) VALUES
+    var sql=`INSERT INTO service_enquiry ( name ,email ,  phone , information , service_title, currentdate,status ) VALUES
                         ('${d.name}','${d.email}','${d.phone}','${d.information}','${d.service_title}',
-                        '${d.currentdate}','${d.currenttime}' ) `;
+                        '${d.currentdate}','${d.status}' ) `;
     var data=await exe(sql)
     // res.send(data);
     res.redirect("/services")
