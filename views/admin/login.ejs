@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel Login</title>
+    <link rel="stylesheet" href="/login_page_style.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Admin Login</h2>
+        <form action="/admin/do_login" method="POST">
+            <div class="input-group">
+                <label for="username">Username/Email:</label>
+                <input type="text" id="username" name="admin_user_id" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="admin_password" required>
+            </div>
+            <div class="input-group">
+                <input type="checkbox" id="remember-me" name="remember-me" required>
+                <label for="remember-me">Remember me</label>
+            </div>
+            <button>Login</button>
+            <p><a href="/admin/update_password">Forgot Password?</a></p>
+        </form>
+    </div>
+</body>
+
+</html>
