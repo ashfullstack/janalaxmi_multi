@@ -35,16 +35,16 @@ router.get("/", async function(req,res){
 router.post("/send_enquiry",async function(req,res){
     var d=req.body;
     var sql= `INSERT INTO enquiry ( enquiry_type, name_of_enquired, email_of_enquired, mobile_of_enquired,
-                              currentdate, currenttime) VALUES 
+                              currentdate) VALUES 
                      ('${d.enquiry_type}','${d.name_of_enquired}','${d.email_of_enquired}',
-                    '${d.mobile_of_enquired}', '${d.currentdate}','${d.currenttime}')`;
+                    '${d.mobile_of_enquired}', '${d.currentdate}')`;
 
     // var sql=`CREATE TABLE enquiry(enquiry_id INT PRIMARY KEY AUTO_INCREMENT, enquiry_type VARCHAR(100), name_of_enquired VARCHAR(100),
     //          email_of_enquired VARCHAR(1000), mobile_of_enquired VARCHAR(15), currentdate TEXT, currenttime TIME);`
 
     var data = await exe(sql);
     // res.send(data);
-    res.redirect("/admin/services")
+    res.redirect("/")
 });
 
 router.post("/customer_support_data",async function(req,res){
