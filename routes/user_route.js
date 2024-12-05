@@ -42,9 +42,9 @@ router.post("/send_enquiry",async function(req,res){
     // var sql=`CREATE TABLE enquiry(enquiry_id INT PRIMARY KEY AUTO_INCREMENT, enquiry_type VARCHAR(100), name_of_enquired VARCHAR(100),
     //          email_of_enquired VARCHAR(1000), mobile_of_enquired VARCHAR(15), currentdate TEXT, currenttime TIME);`
 
-    var data= await exe(sql);
+    var data = await exe(sql);
     // res.send(data);
-    res.redirect("/")
+    res.redirect("/admin/services")
 });
 
 router.post("/customer_support_data",async function(req,res){
