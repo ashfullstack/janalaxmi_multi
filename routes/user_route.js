@@ -52,9 +52,9 @@ router.post("/customer_support_data",async function(req,res){
     // var sql=`CREATE TABLE customer_support (customer_support_id INT PRIMARY KEY AUTO_INCREMENT,
     //             customer_name TEXT, customer_email TEXT, customer_mobile TEXT, customer_address TEXT, customer_query TEXT)`;
     var sql=`INSERT INTO customer_support(customer_name, customer_email, 
-                customer_mobile, customer_address, customer_query)
+                customer_mobile, customer_address, customer_query,customer_support_status)
                  VALUES ('${d.customer_name}','${d.customer_email}','${d.customer_mobile}',
-                 '${d.customer_address}','${d.customer_query}')`;
+                 '${d.customer_address}','${d.customer_query}','${d.customer_support_status}')`;
     var data=await exe(sql);
     // res.send(data);
     res.redirect("/");
