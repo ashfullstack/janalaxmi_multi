@@ -267,7 +267,7 @@ router.get("/delete_slider/:top_slider_id", async function(req,res) {
 });
 
 router.get("/customer_support",async function(req,res){
-    var sql=`SELECT * FROM customer_support where customer_support_status=' ' `;
+    var sql=`SELECT * FROM customer_support where customer_support_status='complete' `;
     var data=await exe(sql);
     var obj={"c_support":data,"is_login":checklogin(req)}
     res.render("admin/customer_support.ejs",obj);
