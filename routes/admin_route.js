@@ -129,7 +129,7 @@ router.get("/about_company",async function(req,res){
 router.get("/service_enquiry",async function(req,res)
 {
     var data= await exe(`SELECT * FROM company`);
-    var data2=await exe(`SELECT * FROM service_enquiry WHERE status='' `);
+    var data2=await exe(`SELECT * FROM service_enquiry WHERE status='complete' `);
 
     var obj={"s_enquirys":data2,"company_info":data[0],"is_login":checklogin(req)};
     res.render("admin/service_enquiry.ejs",obj);
